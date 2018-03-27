@@ -1,0 +1,405 @@
+input {
+    &:invalid {
+        box-shadow: none !important;
+    }
+
+    &::-webkit-input-placeholder {
+        color: $input-placeholder-color;
+    }
+
+    &:-ms-input-placeholder {
+        color: $input-placeholder-color;
+    }
+
+    &:-moz-placeholder {
+        color: $input-placeholder-color;
+    }
+
+    &::-moz-placeholder {
+        color: $input-placeholder-color;
+    }
+
+    &[type=number] {
+        -webkit-appearance: textfield;
+           -moz-appearance: textfield;
+            -ms-appearance: textfield;
+             -o-appearance: textfield;
+                appearance: textfield;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+           -moz-appearance: none;
+            -ms-appearance: none;
+             -o-appearance: none;
+                appearance: none;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        background-color: transparent !important;
+        transition: background-color 5000s ease-in-out 5s;
+    }
+}
+
+input,
+textarea {
+    outline: none;
+    font-family: $font-family;
+
+    &:focus, &:hover {
+        outline: none;
+    }
+}
+
+input[type=text],
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=file] + label,
+
+textarea,
+select {
+    color: $input-textara-select-color;
+    background-color: transparent;
+
+    @include box-sizing(border-box);
+
+    border: 0;
+    border-bottom: $input-textara-select-border-bottom-size
+                   $input-textara-select-border-bottom-style
+                   $input-textara-select-border-bottom-color;
+
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    outline: 0;
+}
+
+textarea {
+    line-height: 22px;
+    resize: none;
+}
+
+input[type=text]:disabled,
+input[type=email]:disabled,
+input[type=number]:disabled,
+input[type=password]:disabled,
+input[type=file]:disabled + label,
+
+textarea:disabled,
+select:disabled {
+    background-color: $input-textara-select-disabled-background-color;
+}
+
+input[type=file] + label {
+    cursor: pointer;
+}
+
+input[type=text],
+input[type=email],
+input[type=number],
+input[type=password],
+
+textarea,
+select {
+    font-size: $font-size;
+}
+
+textarea {
+    height: auto;
+}
+
+select {
+    background-image: none;
+
+    -webkit-appearance:none;
+       -moz-appearance:none;
+        -ms-appearance:none;
+         -o-appearance:none;
+            appearance:none;
+}
+
+*.icomoon,
+div.select,
+input[type=checkbox] + label::before,
+input[type=radio].radio-entry-list + label::before  {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+div.select {
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    &::before {
+        content: "\e923";
+        color: $div-select-before-color;
+        font-size: 18px;
+        line-height: 45px;
+        position: absolute;
+        top: 0;
+        right: 10px;
+        z-index: 1;
+    }
+
+    option,
+    optgroup {
+        color: $div-select-before-option-color;
+        background-color: $div-select-before-option-background-color;
+    }
+}
+
+input[type=file] {
+    display: none;
+
+    & + label {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+input[type=text]:disabled,
+input[type=text]:disabled,
+input[type=email]:disabled,
+input[type=email]:disabled,
+input[type=number]:disabled,
+input[type=number]:disabled,
+input[type=password]:disabled,
+input[type=password]:disabled,
+input[type=file]:disabled + label,
+input[type=file]:disabled + label,
+
+textarea:disabled,
+textarea:disabled,
+select:disabled,
+select:disabled {
+    color: $input-textara-select-disabled-color;
+    border-bottom-color: $input-textara-select-disabled-border-bottom-color;
+}
+
+input[type=text]:enabled:hover,
+input[type=text]:enabled:focus,
+input[type=email]:enabled:hover,
+input[type=email]:enabled:focus,
+input[type=number]:enabled:hover,
+input[type=number]:enabled:focus,
+input[type=password]:enabled:hover,
+input[type=password]:enabled:focus,
+input[type=file]:enabled + label:hover,
+input[type=file]:enabled + label:focus,
+
+textarea:enabled:hover,
+textarea:enabled:focus,
+select:enabled:hover,
+select:enabled:focus,
+
+div.select:hover::before,
+div.select:focus::before {
+    color: $input-textara-select-hover-enabled-color;
+    border-bottom-color: $input-textara-select-hover-enabled-border-bottom-color;
+}
+
+input:enabled:not(.none):invalid,
+input:enabled:not(.none):invalid:hover,
+input:enabled:not(.none):invalid:focus {
+    color: $input-textara-select-enabled-not-none-invalid-color;
+    border-bottom-color: $input-textara-select-enabled-not-none-invalid-border-bottom-color;
+}
+
+input[type=checkbox],
+input[type=radio].radio-entry-list {
+    & + label::before {
+        color: $input-type-checkbox-radio-entry-list-label-before-color;
+        content: "\e927";
+        display: inline-block;
+        font-size: 20px;
+        line-height: 20px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        vertical-align: middle;
+        text-shadow: $input-type-checkbox-radio-entry-list-label-before-text-shadow-hoz
+                     $input-type-checkbox-radio-entry-list-label-before-text-shadow-ver
+                     $input-type-checkbox-radio-entry-list-label-before-text-shadow-blur
+                     $input-type-checkbox-radio-entry-list-label-before-text-shadow-color;
+    }
+
+    &:hover + label::before {
+        color: $input-type-checkbox-radio-entry-list-hover-label-before-color;
+    }
+
+    &:checked + label::before {
+        color: $input-type-checkbox-radio-entry-list-checked-label-before-color;
+        content: "\e928";
+    }
+
+    &:checked:hover + label::before {
+        color: $input-type-checkbox-radio-entry-list-checked-hover-label-before-color;
+    }
+
+    &:disabled + label::before {
+        color: $input-type-checkbox-radio-entry-list-disabled-label-before-color;
+        background-color: $input-type-checkbox-radio-entry-list-disabled-label-before-background-color;
+    }
+
+    & + label span {
+        color: $input-type-checkbox-radio-entry-list-label-span-color;
+        margin-left: 5px;
+        line-height: 15px;
+        font-size: 15px;
+        vertical-align: middle;
+    }
+
+    &:hover + label span {
+        color: $input-type-checkbox-radio-entry-list-hover-label-span-color;
+    }
+
+    &:checked + label span {
+        color: $input-type-checkbox-radio-entry-list-checked-label-span-color;
+    }
+
+    &:checked:hover + label span {
+        color: $input-type-checkbox-radio-entry-list-checked-hover-label-span-color;
+    }
+
+    &:disabled + label span {
+        color: $input-type-checkbox-radio-entry-list-disabled-label-span-color;
+    }
+}
+
+input[type=checkbox]:not(.none),
+input[type=radio].radio-entry-list {
+    display: none;
+}
+
+input[type=checkbox] + label.not-content {
+    background-color: transparent;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+input[type=radio].radio-entry-list {
+    & + label::before {
+        content: "\e926";
+    }
+
+    &:checked + label::before {
+        content: "\e925";
+    }
+}
+
+button {
+    cursor: pointer;
+    outline: 0;
+}
+
+ul.radio-choose-tab,
+ul.radio-choose-tab > li {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+ul.radio-choose-tab > li {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+}
+
+ul.radio-choose-tab {
+    & li:first-child:nth-last-child(3),
+    & li:first-child:nth-last-child(3) ~ li {
+        width: 33.3%;
+    }
+
+    & li:first-child:nth-last-child(4),
+    & li:first-child:nth-last-child(4) ~ li {
+        width: 25%;
+    }
+
+    & li:first-child:nth-last-child(5),
+    & li:first-child:nth-last-child(5) ~ li {
+        width: 20%;
+    }
+
+    & li:first-child:nth-last-child(6),
+    & li:first-child:nth-last-child(6) ~ li {
+        width: 16.6%;
+    }
+
+    & li:first-child:nth-last-child(7),
+    & li:first-child:nth-last-child(7) ~ li {
+        width: 14.2%;
+    }
+
+    & > li {
+        input {
+            display: none;
+
+            & + label {
+                display: block;
+                background-color: $ul-radio-choose-tab-li-input-label-background-color;
+                width: 100%;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+ul.radio-choose-tab > li input:enabled:checked + label {
+    cursor: default;
+}
+
+ul.radio-choose-tab > li input + label span {
+    color: $ul-radio-choose-tab-li-input-label-span-color;
+    line-height: 40px;
+    font-size: $font-size;
+}
+
+ul.radio-choose-tab > li input:disabled + label span {
+    color: $ul-radio-choose-tab-li-input-disabled-label-span-color;
+}
+
+ul.radio-choose-tab > li input:enabled:checked + label,
+ul.radio-choose-tab > li input:enabled:checked + label:hover {
+    background-color: $ul-radio-choose-tab-li-input-enabled-checked-label-hover;
+}
+
+ul.radio-choose-tab > li input:enabled + label:hover {
+    background-color: $ul-radio-choose-tab-li-input-enabled-label-hover;
+}
+
+ul.radio-choose-tab > li input:enabled:checked + label span,
+ul.radio-choose-tab > li input:enabled:checked + label:hover span {
+    color: $ul-radio-choose-tab-li-input-enabled-checked-label-hover-span;
+}
+
+ul.radio-choose-tab > li input + label:enabled:hover span {
+    color:  $ul-radio-choose-tab-li-input-label-enabled-hover-span;
+}

@@ -1,0 +1,76 @@
+$font-family: Helvetica, Arial, "Liberation Sans", sans-serif;
+$font-size: 15px;
+
+$body-background-color: #e3e3e3;
+$body-background-image: "";
+$body-background-position: 0 0;
+$body-background-size: auto;
+$body-background-repeat: repeat;
+
+$input-placeholder-color: #a0a0a0;
+
+$a-link-visited: #505050;
+$a-hover-focus: #909090;
+
+$spinner-width: 25px;
+$spinner-height: 25px;
+$spinner-border-size: 3px;
+$spinner-color-outer: #00897b;
+$spinner-color-inner: #80cbc4;
+
+$header-z-index: 10000;
+$header-action-background-color: #00897b;
+$header-action-border-radius: 20px;
+$header-action-box-shadow-hoz: 1px;
+$header-action-box-shadow-ver: 1px;
+$header-action-box-shadow-blur: 5px;
+$header-action-box-shadow-color: rgba(0, 0, 0, 0.3);
+$header-action-icon-color: #ffffff;
+$header-action-icon-font-size: 20px;
+$header-action-icon-hover-color: #a0a0a0;
+$header-action-li-padding: 8px;
+$header-action-li-padding-left: 12px;
+$header-action-li-padding-right: 12px;
+
+$container-z-index: $header-z-index - 1;
+
+$loading-z-index: 1000;
+$loading-background-color: rgba(0, 0, 0, 0.3);
+$loading-box-background-color: #ffffff;
+$loading-box-border-radius: 6px;
+$loading-box-padding: 20px;
+$loading-box-padding-left-right: 50px;
+$loading-box-box-shadow-hoz: 1px;
+$loading-box-box-shadow-ver: 1px;
+$loading-box-box-shadow-blur: 15px;
+$loading-box-box-shadow-color: rgba(0, 0, 0, 0.4);
+$loading-box-notice-color: #505050;
+$loading-box-notice-font-size: 18px;
+$loading-box-notice-margin-top: 20px;
+
+$login-z-index: $loading-z-index - 500;
+$login-width: 400px;
+$login-padding-left: 10px;
+$login-padding-right: 10px;
+$login-form-background-color: #ffffff;
+$login-form-box-shadow-hoz: 1px;
+$login-form-box-shadow-ver: 1px;
+$login-form-box-shadow-blur: 8px;
+$login-form-box-shadow-color: rgba(0, 0, 0, 0.15);
+$login-form-border-radius: 20px;
+$login-form-input-height: 65px;
+$login-form-input-color: #a0a0a0;
+$login-form-input-focus-color: #505050;
+$login-form-icon-focus-color: #00897b;
+$login-form-input-font-size: 15px;
+$login-form-icon-font-size: 20px;
+$login-form-divider-size: 1px;
+$login-form-divider-style: dashed;
+$login-form-divider-color: #dadada;
+$login-form-button-height: 55px;
+$login-form-button-color: #505050;
+$login-form-button-hover-color: #00897b;
+
+$sidebar-z-index: $login-z-index - 1;
+
+$content-z-index: $sidebar-z-index - 1;

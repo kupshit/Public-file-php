@@ -1,0 +1,101 @@
+ul.action-multi,
+ul.action-multi li {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 45px;
+}
+
+ul.action-multi {
+    background-color: $action-multi-background-color;
+    margin-bottom: $action-multi-margin-bottom;
+
+    @include box-shadow(
+        $action-multi-box-shadow-hoz
+        $action-multi-box-shadow-ver
+        $action-multi-box-shadow-blur
+        $action-multi-box-shadow-color
+    );
+
+    li {
+        display: inline-block;
+        float: left;
+        text-align: center;
+
+        button {
+            background-color: $action-multi-li-button-background-color;
+            border: 0;
+            outline: 0;
+            height: $action-multi-li-button-height;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            span {
+                font-size: $font-size;
+            }
+
+            &:hover,
+            &:focus {
+                color: $action-multi-li-button-hover-focus-color;
+
+                span {
+                    color: $action-multi-li-button-hover-focus-color;
+                }
+            }
+        }
+
+        span.icomoon {
+            font-size: $action-multi-li-span-icon-font-size;
+        }
+
+        span,
+        button {
+            color: $action-multi-li-button-span-color;
+            vertical-align: middle;
+        }
+
+        &:first-child:nth-last-child(2),
+        &:first-child:nth-last-child(2) ~ li {
+            width: 50%;
+        }
+
+        &:first-child:nth-last-child(3),
+        &:first-child:nth-last-child(3) ~ li {
+            width: 33.3%;
+        }
+
+        &:first-child:nth-last-child(4),
+        &:first-child:nth-last-child(4) ~ li {
+            width: 25%;
+        }
+
+        &:first-child:nth-last-child(5),
+        &:first-child:nth-last-child(5) ~ li {
+            width: 20%;
+        }
+
+        &:first-child:nth-last-child(6),
+        &:first-child:nth-last-child(6) ~ li {
+            width: 16.6%;
+        }
+
+        &:first-child:nth-last-child(7),
+        &:first-child:nth-last-child(7) ~ li {
+            width: 14.2%;
+        }
+    }
+
+    @media all and (max-width: 540px) {
+        span.label {
+            display: none;
+        }
+
+        span.icomoon {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,205 @@
+div#about {
+    background-color: $about-background-color;
+    overflow: hidden;
+
+    @include box-shadow(
+        $about-box-shadow-hoz
+        $about-box-shadow-ver
+        $about-box-shadow-blur
+        $about-box-shadow-color
+    );
+
+    text-align: center;
+    padding: 5px;
+    margin-bottom: $about-margin-bottom;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    & > h1 {
+        color: $about-h1-color;
+        font-size: $about-h1-font-size;
+        font-weight: normal;
+        font-variant: normal;
+        text-shadow: $about-h1-text-shadow-hoz
+                     $about-h1-text-shadow-ver
+                     $about-h1-text-shadow-blur
+                     $about-h1-text-shadow-color;
+
+        &.small {
+            font-size: $about-h1-font-size-small;
+        }
+    }
+
+    & > h5 {
+        color: $about-h5-color;
+        font-size: $about-h5-font-size;
+        font-weight: normal;
+        font-variant: normal;
+    }
+}
+
+div#about > ul {
+	width: 100%;
+	text-align: left;
+}
+
+div#about > ul,
+div#about > ul > li,
+div#about > ul > li > ul,
+div#about > ul > li > ul > li {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+div#about > ul {
+    border-top: $about-ul-border-top-size
+                $about-ul-border-top-style
+                $about-ul-border-top-color;
+
+    padding-top: 15px;
+    padding-bottom: 10px;
+    position: relative;
+    overflow: auto;
+
+    & > li.label,
+    & > li.value {
+        height: 30px;
+    	display: inline-block;
+
+        li {
+            padding-left: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        span {
+            line-height: 30px;
+        }
+    }
+
+    & > li.label li {
+        padding-left: 10px;
+
+        span {
+            color: $about-ul-li-lable-li-span-color;
+            font-weight: $about-ul-li-lable-li-span-font-weight;
+            font-size: $about-ul-li-lable-li-span-font-size;
+        }
+    }
+
+    & > li.value li {
+        max-width: 100%;
+
+        span {
+            color: $about-ul-li-value-li-span-color;
+
+            &.status-on,
+            &.status-enabled {
+                color: $about-ul-li-value-li-span-status-on-enabled-color;
+            }
+
+            &.status-off,
+            &.status-disabled {
+                color: $about-ul-li-value-li-span-status-off-disabled-color;
+            }
+
+            &.status-unknown {
+                color: $about-ul-li-value-li-span-status-unknown-color;
+            }
+        }
+    }
+
+    & > li.message {
+        display: block;
+        word-wrap: break-word;
+
+        & > div {
+            &.title {
+                padding: 15px;
+                text-align: center;
+
+                span {
+                    color: $about-ul-li-message-div-title-span-color;
+                    font-weight: $about-ul-li-message-div-title-span-font-weight;
+                }
+            }
+
+            &.content {
+                padding: 10px;
+                text-align: left;
+
+                span {
+                    color: $about-ul-li-message-div-content-span-color;
+                }
+            }
+        }
+
+        &.show-hidden {
+            position: relative;
+
+            & > div.content {
+                max-height: 250px;
+                overflow: hidden;
+            }
+        }
+
+        &.divider-top {
+            border-top: $about-ul-li-message-divider-border-size
+                        $about-ul-li-message-divider-border-style
+                        $about-ul-li-message-divider-border-color;
+
+            margin-top: 10px;
+        }
+
+        &.divider-bottom {
+            border-bottom: $about-ul-li-message-divider-border-size
+                           $about-ul-li-message-divider-border-style
+                           $about-ul-li-message-divider-border-color;
+        }
+
+        #show-readme,
+        #show-changelog {
+            &:target {
+                max-height: 100%;
+                height: auto;
+                overflow: none;
+
+                & + a.show {
+                    display: none;
+                }
+            }
+
+            & + a.show {
+                display: inline-block;
+                text-align: center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+div.form-action {
+    & > div#about {
+        background-color: transparent;
+    }
+}
+
+div.about-button-check {
+    border-top: $about-div-about-button-check-border-top-size
+                $about-div-about-button-check-border-top-style
+                $about-div-about-button-check-border-top-color;
+
+    width: auto;
+    padding: 10px;
+
+    * {
+        color: $about-div-about-button-check-color;
+        font-weight: $about-div-about-button-check-font-weight;
+    }
+}

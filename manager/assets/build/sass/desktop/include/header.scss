@@ -1,0 +1,74 @@
+div#header {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: $header-z-index;
+
+    @include box-shadow(0 1px 5px rgba(0, 0, 0, 0.1));
+
+    ul.action {
+        background-color: $header-action-background-color;
+        position: absolute;
+        top: 0;
+
+        &.left,
+        &.right,
+        &.left li,
+        &.right li {
+            display: block;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        &.left,
+        &.right {
+            li {
+                display: inline-block;
+                padding: $header-action-li-padding;
+                padding-left: $header-action-li-padding-left;
+                padding-right: $header-action-li-padding-right;
+
+                span.icomoon {
+                    color: $header-action-icon-color;
+                    cursor: pointer;
+                    display: block;
+                    font-size: $header-action-icon-font-size;
+
+                    &:hover {
+                        color: $header-action-icon-hover-color;
+                    }
+                }
+            }
+        }
+
+        &.left {
+            @include border-bottom-right-radius($header-action-border-radius);
+
+            @include box-shadow(
+                $header-action-box-shadow-hoz
+                $header-action-box-shadow-ver
+                $header-action-box-shadow-blur
+                $header-action-box-shadow-color
+            );
+
+            left: 0;
+        }
+
+        &.right {
+            @include border-bottom-left-radius($header-action-border-radius);
+
+            @include box-shadow(
+                -$header-action-box-shadow-hoz
+                 $header-action-box-shadow-ver
+                 $header-action-box-shadow-blur
+                 $header-action-box-shadow-color
+            );
+
+            right: 0;
+        }
+    }
+
+}

@@ -1,0 +1,82 @@
+ul.alert,
+ul.alert li {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.alert {
+    margin-bottom: $alert-margin-bottom;
+
+    li {
+        font-size: $font-size;
+        background-color: $alert-li-background-color;
+
+        @include box-shadow(
+            $alert-li-box-shadow-hoz
+            $alert-li-box-shadow-ver
+            $alert-li-box-shadow-blur
+            $alert-li-box-shadow-color
+        );
+
+        padding: 14px;
+        margin: 0;
+        margin-bottom: 8px;
+        word-wrap: break-word;
+
+        &,
+        & * {
+            color: $alert-li-color;
+        }
+
+        a:hover {
+            color: $alert-li-a-hover-color;
+        }
+
+        &.danger {
+            background-color: $alert-li-danger-background-color;
+        }
+
+        &.danger,
+        &.danger * {
+            color: $alert-li-danger-color;
+        }
+
+        &.success {
+            background-color: $alert-li-success-background-color;
+        }
+
+        &.success,
+        &.success * {
+            color: $alert-li-success-color;
+        }
+
+        &.warning {
+            background-color: $alert-li-warning-background-color;
+        }
+
+        &.warning,
+        &.warning * {
+            color: $alert-li-warning-color;
+        }
+
+        &.info {
+            background-color: $alert-li-info-background-color;
+        }
+
+        &.info,
+        &.info * {
+            color: $alert-li-info-color;
+
+            a:hover,
+            a:hover * {
+                color: $alert-li-info-a-hover-color;
+            }
+        }
+    }
+
+    &:last-child {
+        margin: 0;
+    }
+}
