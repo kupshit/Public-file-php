@@ -1,0 +1,6 @@
+The following service(s) have been created in your project: mysql.
+
+       Username: mysql
+       Password: kidkid123
+  Database Name: sampledb
+ Connection URL: mysql://mysql:3306/
