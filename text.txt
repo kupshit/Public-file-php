@@ -4,3 +4,5 @@ The following service(s) have been created in your project: mysql.
        Password: kidkid123
   Database Name: sampledb
  Connection URL: mysql://mysql:3306/
+
+https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
