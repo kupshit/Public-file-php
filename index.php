@@ -197,7 +197,7 @@ $dirs = @array_values($dirs); $files = @array_values($files);
                         <!-- .lits-group-item-figure -->
                         <div class="list-group-item-figure">
                           <div class="has-badge">
-                            <a href="<?php echo $dotdotdir;?>" class="tile tile-md bg-yellow">SP</a>
+                            <a href="<?php echo $dotdotdir;?>" class="tile tile-md bg-yellow">UP</a>
                             <a href="#up" class="user-avatar user-avatar-xs">
                               <img src="dirup.png" alt="up">
                             </a>
