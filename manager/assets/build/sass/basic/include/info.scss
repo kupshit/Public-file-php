@@ -1,0 +1,167 @@
+ul.info,
+ul.info > li,
+ul.info > li > ul,
+ul.info > li > ul li {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.info {
+    background-color: $info-background-color;
+    margin-bottom: $info-margin-bottom;
+
+    @include box-shadow(
+        $info-box-shadow-hoz
+        $info-box-shadow-ver
+        $info-box-shadow-blur
+        $info-box-shadow-color
+    );
+
+    width: 100%;
+    text-align: left;
+
+    & > li {
+        &.title,
+        &.title-list {
+            padding: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        &.title {
+            & > span {
+                color: $info-li-title-span-color;
+                font-weight: normal;
+                font-size: $info-li-title-span-font-size;
+            }
+        }
+
+        &.title-list {
+            margin-bottom: 0;
+            text-align: center;
+
+            & > span {
+                color: $info-li-title-list-span-color;
+                font-weight: bold;
+            }
+        }
+
+        &.divider {
+            border-top: $info-li-divider-border-top-size
+                        $info-li-divider-border-top-style
+                        $info-li-divider-border-top-color;
+
+            display: block;
+            margin: 15px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        &.label,
+        &.value {
+            display: inline-block;
+
+            li {
+                padding-left: 10px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+
+        &.label {
+            li {
+                padding-left: 10px;
+            }
+
+            span {
+                color: $info-li-label-span-color;
+                font-weight: $info-li-label-span-font-weight;
+                font-size: $font-size;
+            }
+        }
+
+        &.value,
+        &.value span {
+            color: $info-li-value-span-color;
+        }
+
+        &.value {
+            max-width: 70%;
+        }
+
+        &.image {
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding-top: 10px;
+            padding-bottom: 30px;
+            text-align: center;
+
+            span {
+                color: $info-li-image-span-color;
+            }
+
+            img {
+                max-width: 90%;
+            }
+        }
+
+        li {
+            height: $info-li-height;
+
+            & > span {
+                line-height: $info-li-height;
+            }
+        }
+
+        &.button-action-box {
+            padding-bottom: 15px;
+        }
+
+        &.comment {
+            border-top: $info-li-comment-border-top-size
+                        $info-li-comment-border-top-style
+                        $info-li-comment-border-top-color;
+
+            padding: 15px;
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-top: 15px;
+
+            & > div.title {
+                text-align: center;
+
+                span {
+                    color: $info-li-comment-div-title-span-color;
+                    font-weight: $info-li-comment-div-title-span-font-weight;
+                }
+            }
+
+            & > div.comment {
+                padding: 5px;
+                text-align: left;
+
+                span {
+                    color: $info-li-comment-div-comment-span-color;
+                }
+            }
+        }
+
+        @media all and (max-width: 480px) {
+            &.value {
+                max-width: 40%;
+            }
+        }
+
+        @media all and (max-width: 720px) {
+            &.value {
+                max-width: 60%;
+            }
+        }
+    }
+}

@@ -1,0 +1,153 @@
+div#container-login {
+    padding-top: $login-max-padding-top;
+
+    div#login,
+    ul.alert {
+        max-width: $login-max-width;
+    }
+
+    ul.alert {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    div#login {
+        background-color: $login-background-color;
+
+        @include box-shadow(
+            $login-box-shadow-hoz
+            $login-box-shadow-ver
+            $login-box-shadow-blur
+            $login-box-shadow-color
+        );
+
+        margin: 0 auto;
+        margin-bottom: $login-margin-bottom;
+        padding: 0;
+        position: relative;
+    }
+
+    form#login-form {
+        > ul {
+            display: block;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+
+            li.input {
+                position: relative;
+
+                input {
+                    color: $login-form-ul-input-color;
+                    border: 0;
+                    font-size: 15px;
+                    height: $login-form-ul-height-input;
+                    display: block;
+                    width: 100%;
+                    padding-left: $login-form-ul-height-input;
+                    padding-right: $login-form-ul-height-input / 2;
+                    -webkit-text-fill-color: $login-form-ul-input-color;
+
+                    @include box-sizing(border-box);
+
+                    + span.icomoon {
+                        color: $login-form-ul-input-color;
+                        font-size: 20px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: $login-form-ul-height-input;
+                        height: $login-form-ul-height-input;
+                        line-height: $login-form-ul-height-input;
+                        text-align: center;
+                    }
+
+                    &:enabled:hover, &:enabled:focus {
+                        color: $login-form-ul-input-focus-color;
+                        -webkit-text-fill-color: $login-form-ul-input-focus-color;
+
+                        + span {
+                            color: $login-form-ul-input-focus-color;
+                        }
+                    }
+                }
+
+                &.captcha {
+                    padding-right: ($login-form-ul-height-input / 2) + 100px;
+
+                    img {
+                        position: absolute;
+                        top: ($login-form-ul-height-input - 45px) / 2;
+                        right: $login-form-ul-height-input / 2;
+                    }
+                }
+            }
+
+            li.button {
+                border-top: $login-form-ul-li-button-border-top-size
+                            $login-form-ul-li-button-border-top-style
+                            $login-form-ul-li-button-border-top-color;
+
+                button, a {
+                    background-color: transparent;
+                    border: 0;
+                    outline: 0;
+                    font-size: 15px;
+                    font-family: $font-family;
+                    display: inline-block;
+                    width: 49%;
+                    height: $login-form-ul-li-button-height;
+                    line-height: $login-form-ul-li-button-height;
+                    margin: 0;
+                    padding: 0;
+                    cursor: pointer;
+                    text-align: center;
+
+                    span {
+                        color: $login-form-ul-li-button-span-color;
+                    }
+
+                    &:hover {
+                        span {
+                            color: $login-form-ul-li-button-hover-span-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        input {
+            color: $login-form-input-color;
+            border: 0;
+
+            @include box-sizing(border-box);
+
+            display: block;
+            margin: 0;
+            padding: 15px;
+            width: 100%;
+            outline: 0;
+
+            &:focus {
+                color: $login-form-input-focus-color;
+            }
+
+            &::-webkit-input-placeholder {
+                color: $login-form-input-placeholder-color;
+            }
+
+            &:-ms-input-placeholder {
+                color: $login-form-input-placeholder-color;
+            }
+
+            &:-moz-placeholder {
+                color: $login-form-input-placeholder-color;
+            }
+
+            &::-moz-placeholder {
+                color: $login-form-input-placeholder-color;
+            }
+        }
+    }
+}

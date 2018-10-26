@@ -1,0 +1,113 @@
+div.editor-highlight {
+    border: 1px solid #404040;
+    position: relative;
+    overflow: hidden;
+    height: 680px;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    textarea {
+        display: none;
+    }
+
+    div.line-number {
+        background-color: transparent;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+
+    ul.wrapper,
+    ul.wrapper > li {
+        display: block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul.wrapper {
+        position: relative;
+        overflow: scroll;
+
+        & > li {
+            font-size: 18px;
+            font-family: monospace;
+            position: relative;
+
+            & > span:first-child {
+                color: #ffffff;
+                font-size: inherit;
+                background-color: transparent;
+                border-right: 1px solid #404040;
+                display: inline-block;
+                position: absolute;
+                line-height: 24px;
+                top: 0;
+                left: 0;
+                padding-left: 20px;
+                padding-right: 10px;
+                height: 100%;
+                z-index: 10;
+                text-align: right;
+
+                @include userSelect(none);
+            }
+
+            & > pre:last-child {
+                display: inline-block;
+                font-size: inherit;
+                font-family: inherit;
+                margin: 0;
+                padding: 0;
+                padding-left: 5px;
+                position: relative;
+                width: 100%;
+                z-index: 0;
+
+                &.wrap {
+                    word-wrap: break-word;
+                    white-space: pre-wrap;
+                }
+
+                & > span {
+                    color: rgb(214, 215, 217);
+                    font-size: inherit;
+                    font-family: inherit;
+
+                    span {
+                        font-size: inherit;
+                        font-family: inherit;
+                    }
+
+                    span.php-tag-open,
+                    span.php-tag-close {
+                        color: rgb(214, 215, 217);
+                    }
+
+                    span.php-variable-name,
+                    span.php-class-tag-self {
+                        color: rgb(214, 215, 217);
+                    }
+
+                    span.php-symbol,
+                    span.php-keyword {
+                        color: rgb(243, 86, 86);
+                    }
+
+                    span.php-string {
+                        color: rgb(240, 218, 94);
+                    }
+
+                    span.php-number,
+                    span.php-class-name,
+                    span.php-function {
+                        color: rgb(116, 241, 198);
+                    }
+                }
+            }
+        }
+    }
+}

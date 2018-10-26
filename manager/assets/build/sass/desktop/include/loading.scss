@@ -1,0 +1,93 @@
+@include keyframes(spinnerFrames) {
+    from { @include transform(rotate(0deg)); }
+
+    to { @include transform(rotate(-360deg)); }
+}
+
+@include keyframes(spinnerFramesAlternate) {
+    from { @include transform(rotate(0deg)); }
+
+    to { @include transform(rotate(360deg)); }
+}
+
+.spinner-animation {
+    display: block;
+    position: relative;
+    left: 50%;
+    width: $spinner-width;
+    height: $spinner-height;
+
+    @include transform(translate(-50%, 0));
+
+    &:after {
+        content: "";
+        border: $spinner-border-size solid transparent;
+        border-left: $spinner-border-size solid $spinner-color-outer;
+        display: inline-block;
+        position: absolute;
+        top: -$spinner-border-size;
+        left: -$spinner-border-size;
+        width: 100%;
+        height: 100%;
+
+        @include border-radius(100%);
+        @include animation(spinnerFrames 1.5s ease-in-out infinite);
+    }
+
+    &:before {
+        content: "";
+        border: $spinner-border-size solid transparent;
+        border-top: $spinner-border-size solid $spinner-color-inner;
+        border-bottom: $spinner-border-size solid $spinner-color-inner;
+        display: inline-block;
+        position: absolute;
+        top: -$spinner-border-size;
+        left: -$spinner-border-size;
+        width: 100%;
+        height: 100%;
+
+        @include border-radius(100%);
+        @include animation(spinnerFramesAlternate 1s linear infinite);
+    }
+}
+
+div#loading {
+    display: block;
+    background-color: $loading-background-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: $loading-z-index;
+
+    div#box {
+        display: block;
+        background-color: $loading-box-background-color;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        padding: $loading-box-padding;
+        padding-left: $loading-box-padding-left-right;
+        padding-right: $loading-box-padding-left-right;
+        text-align: center;
+
+        @include border-radius($loading-box-border-radius);
+        @include transform(translate(-50%, -50%));
+
+        @include box-shadow(
+            $loading-box-box-shadow-hoz
+            $loading-box-box-shadow-ver
+            $loading-box-box-shadow-blur
+            $loading-box-box-shadow-color
+        );
+
+        span.notice {
+            display: block;
+            color: $loading-box-notice-color;
+            font-size: $loading-box-notice-font-size;
+            margin-top: $loading-box-notice-margin-top;
+            white-space: nowrap;
+        }
+    }
+}

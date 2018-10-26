@@ -1,0 +1,135 @@
+@include keyframes(spinnerFrames) {
+    from { @include transform(rotate(0deg)); }
+
+    to { @include transform(rotate(360deg)); }
+}
+
+div#header {
+    background-color: $header-background-color;
+
+    @include box-shadow(
+        $header-box-shadow-hoz
+        $header-box-shadow-ver
+        $header-box-shadow-blur
+        $header-box-shadow-color
+    );
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $header-height;
+    margin: 0 auto;
+    padding: 0;
+    z-index: 9999;
+
+    &.disable-fixed {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    div#logo {
+        float: left;
+        width: $header-div-logo-width;
+        text-align: center;
+    }
+
+    a {
+        span#logo {
+            color: $header-a-span-logo-color;
+            font-weight: normal;
+            font-variant: normal;
+            font-weight: 500;
+            font-size: $header-a-span-logo-font-size;
+            line-height: $header-height;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    a:hover span#logo {
+        color: $header-a-hover-span-logo-color;
+        text-shadow: $header-a-hover-span-logo-text-shadow-hoz
+                     $header-a-hover-span-logo-text-shadow-ver
+                     $header-a-hover-span-logo-text-shadow-blur
+                     $header-a-hover-span-logo-text-shadow-color;
+    }
+
+    ul#action,
+    ul#action li {
+        display: inline-block;
+        list-style: none;
+        margin: 0;
+        margin-right: 5px;
+        padding: 0;
+    }
+
+    ul#action {
+        position: absolute;
+        top: 0;
+        left: $header-height + 5px;
+        right: 0;
+        height: $header-height;
+        text-align: right;
+        white-space: nowrap;
+        overflow: hidden;
+
+        li {
+            padding-left: 5px;
+            padding-right: 5px;
+
+            a {
+                span {
+                    color:  $header-ul-action-li-a-span-color;
+                    font-size: $header-ul-action-li-a-span-font-size;
+                    line-height: $header-height;
+                    text-shadow: $header-ul-action-li-a-span-text-shadow-hoz
+                                 $header-ul-action-li-a-span-text-shadow-ver
+                                 $header-ul-action-li-a-span-text-shadow-blur
+                                 $header-ul-action-li-a-span-text-shadow-color;
+                }
+            }
+
+            a:hover span {
+                color: $header-ul-action-li-a-hover-span-color;
+            }
+
+            a span.icomoon {
+                &.autoload-is-disable {
+                    color: $header-ul-action-li-span-autoload-is-disable-color;
+                    text-shadow: $header-ul-action-li-span-autoload-is-disable-text-shadow-hoz
+                                 $header-ul-action-li-span-autoload-is-disable-text-shadow-ver
+                                 $header-ul-action-li-span-autoload-is-disable-text-shadow-blur
+                                 $header-ul-action-li-span-autoload-is-disable-text-shadow-color,
+
+                                -$header-ul-action-li-span-autoload-is-disable-text-shadow-hoz
+                                -$header-ul-action-li-span-autoload-is-disable-text-shadow-ver
+                                 $header-ul-action-li-span-autoload-is-disable-text-shadow-blur
+                                 $header-ul-action-li-span-autoload-is-disable-text-shadow-color,
+
+                                 $header-ul-action-li-span-autoload-is-disable-text-shadow-hoz
+                                -$header-ul-action-li-span-autoload-is-disable-text-shadow-ver
+                                 $header-ul-action-li-span-autoload-is-disable-text-shadow-blur
+                                 $header-ul-action-li-span-autoload-is-disable-text-shadow-color,
+
+                                -$header-ul-action-li-span-autoload-is-disable-text-shadow-hoz
+                                 $header-ul-action-li-span-autoload-is-disable-text-shadow-ver
+                                 $header-ul-action-li-span-autoload-is-disable-text-shadow-blur
+                                 $header-ul-action-li-span-autoload-is-disable-text-shadow-color;
+                }
+
+                &.animation {
+                    display: inline-block;
+                    @include animation(spinnerFrames 1s linear infinite);
+                }
+            }
+        }
+
+        @media all and (max-width: 260px) {
+            li.about {
+                display: none;
+            }
+        }
+    }
+}

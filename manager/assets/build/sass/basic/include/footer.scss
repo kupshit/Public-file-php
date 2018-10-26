@@ -1,0 +1,39 @@
+div#footer {
+    border: 0;
+    border-top: $footer-border-top-size
+                $footer-border-top-style
+                $footer-border-top-color;
+
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    max-width: $footer-max-width;
+    padding: 15px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &::after {
+        content: '';
+        background-color: $footer-after-background-color;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+    }
+
+    &,
+    & span {
+        color: $footer-span-color;
+        font-size: $font-size;
+        text-shadow: $footer-span-text-shadow-hoz
+                     $footer-span-text-shadow-ver
+                     $footer-span-text-shadow-blur
+                     $footer-span-text-shadow-color;
+    }
+}
