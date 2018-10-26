@@ -1,0 +1,37 @@
+{
+  "name": "Manager",
+  "version": "3.5.0",
+  "description": "Manager By IzeroCs",
+  "main": "assets/javascript/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "url": "https://github.com/IzeroCs/Manager.git",
+    "type": "git"
+  },
+  "keywords": [
+    "Manager",
+    "IzeroCs"
+  ],
+  "author": "IzeroCs",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8",
+    "gulp-sass": "^3.1.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-livereload": "^3.8.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-cssbeautify": "^1.0.0",
+    "gulp-js-prettify": "^0.1.0",
+    "gulp-wait": "^0.0.2",
+    "gulp-color": "^0.0.1",
+    "node-notifier": "^5.2.1",
+    "del": "^3.0.0"
+  },
+  "dependencies": {}
+}

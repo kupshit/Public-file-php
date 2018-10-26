@@ -61,7 +61,7 @@
         ],
 
         'language' => 'vi',
-        'http_host' => 'http://my-duc.193b.starter-ca-central-1.openshiftapps.com/manage',
+        'http_host' => 'http://izerocs.local/Manager',
     ];
 
 ?>
