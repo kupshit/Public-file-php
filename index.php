@@ -197,7 +197,7 @@ $dirs = @array_values($dirs); $files = @array_values($files);
                         <!-- .lits-group-item-figure -->
                         <div class="list-group-item-figure">
                           <div class="has-badge">
-                            <a href="<?php echo $dotdotdir;?>" class="tile tile-md bg-indigo">SP</a>
+                            <a href="<?php echo $dotdotdir;?>" class="tile tile-md bg-yellow">SP</a>
                             <a href="#up" class="user-avatar user-avatar-xs">
                               <img src="dirup.png" alt="up">
                             </a>
@@ -212,7 +212,7 @@ $dirs = @array_values($dirs); $files = @array_values($files);
                           <p class="card-subtitle text-muted"> <?php $mtime = filemtime($dotdotdir); $mtime = date("m/d/Y H:i:s", $mtime); $mtime = strftime("%B %e, %G %T", strtotime($mtime)); print ucfirst($mtime); ?> </p>
                           <!-- .progress -->
                           <div class="progress progress-xs bg-white">
-                            <div class="progress-bar bg-indigo" role="progressbar" aria-valuenow="867" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                            <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="867" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
                               <span class="sr-only">100% Complete</span>
                             </div>
                           </div>
@@ -233,7 +233,7 @@ $dirs = @array_values($dirs); $files = @array_values($files);
                         <!-- .lits-group-item-figure -->
                         <div class="list-group-item-figure">
                           <div class="has-badge">
-                            <a href="<?php echo $leadon.$dirs[$i];?>" class="tile tile-md bg-indigo">FD</a>
+                            <a href="<?php echo $leadon.$dirs[$i];?>" class="tile tile-md bg-yellow">FD</a>
                             <a href="#folder" class="user-avatar user-avatar-xs">
                               <img src="folder.png" alt="foter">
                             </a>
@@ -248,7 +248,7 @@ $dirs = @array_values($dirs); $files = @array_values($files);
                           <p class="card-subtitle text-muted"> <?php $mtime = filemtime($leadon.$dirs[$i]); $mtime = date("m/d/Y H:i:s", $mtime); $mtime = strftime("%B %e, %G %T", strtotime($mtime)); print ucfirst($mtime); ?> </p>
                           <!-- .progress -->
                           <div class="progress progress-xs bg-white">
-                            <div class="progress-bar bg-indigo" role="progressbar" aria-valuenow="867" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                            <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="867" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
                               <span class="sr-only">100% Complete</span>
                             </div>
                           </div>
