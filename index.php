@@ -10,7 +10,7 @@ $showdirs = true;
 $forcedownloads = false;
 $hide = array(
 				'dlf',
-				'public_html',				
+				'public_html',
 				'index.php',
 				'Thumbs',
 				'.htaccess',
@@ -164,164 +164,42 @@ if($_GET['order']=="desc") {$files = @array_reverse($files);}
 $dirs = @array_values($dirs); $files = @array_values($files);
 
 ?>
-<!DOCTYPE html><html lang="vi"><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title> Dashboard | Manager file </title>
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://uselooper.com/assets/apple-touch-icon.png">
-    <link rel="shortcut icon" href="http://uselooper.com/assets/favicon.ico">
-    <meta name="theme-color" content="#3063A0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link href="main.min.css" rel="stylesheet">
-</head>
-  <body>
-    <div class="app">
-      <main>
-        <div class="wrapper">
-          <div class="page">
-            <div class="page-inner">
-              <div class="page-section">
-                <div class="section-deck">
-                  <!-- .card -->
-                  <div class="card card-fluid">
-                    <header class="card-header"> File Manager: <b><?php echo $host; ?> </header>
-                    <!-- .lits-group -->
-                    <div class="lits-group list-group-flush">
-                      <!-- /.lits-group-item -->
+<!DOCTYPE html><html lang="vi"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <title>Dashboard | Manager file </title> <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://uselooper.com/assets/apple-touch-icon.png"> <link rel="shortcut icon" href="http://uselooper.com/assets/favicon.ico"> <meta name="theme-color" content="#3063A0"> <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> <link href="main.min.css" rel="stylesheet"></head> <body> <div class="app"> <main> <div class="wrapper"> <div class="page"> <div class="page-inner"> <div class="page-section"> <div class="section-deck"> <div class="card card-fluid"> <header class="card-header"> File Manager: <b><?php echo $host; ?> </header><div class="lits-group list-group-flush">
                                 <?php
-                                $class = 'b';
                                 if($dirok) {
                                 ?>
-                                   <!-- .lits-group-item -->
-                      <div class="list-group-item">
-                        <!-- .lits-group-item-figure -->
-                        <div class="list-group-item-figure">
-                          <div class="has-badge">
-                            <a href="<?php echo $dotdotdir;?>" class="tile tile-md bg-yellow">UP</a>
-                            <a href="#up" class="user-avatar user-avatar-xs">
-                              <img src="dirup.png" alt="up">
-                            </a>
-                          </div>
-                        </div>
-                        <!-- .lits-group-item-figure -->
-                        <!-- .lits-group-item-body -->
-                        <div class="list-group-item-body">
-                          <h5 class="card-title mb-2">
-                            Up to level
-                          </h5>
-                          <p class="card-subtitle text-muted"> <?php $mtime = filemtime($dotdotdir); $mtime = date("m/d/Y H:i:s", $mtime); $mtime = strftime("%B %e, %G %T", strtotime($mtime)); print ucfirst($mtime); ?> </p>
-                          <!-- .progress -->
-                          <div class="progress progress-xs bg-white">
-                            <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="867" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                              <span class="sr-only">100% Complete</span>
-                            </div>
-                          </div>
-                          <!-- /.progress -->
-                        </div>
-                        <!-- .lits-group-item-body -->
-                      </div>
-                      <!-- /.lits-group-item -->
+<div class="list-group-item"><div class="list-group-item-figure"><div class="has-badge"><a href="<?php echo $dotdotdir;?>" class="tile tile-md bg-yellow">UP</a> <a href="#up" class="user-avatar user-avatar-xs"> <img src="dirup.png" alt="up"> </a> </div></div><div class="list-group-item-body"> <h5 class="card-title mb-2"> Up to level </h5><p class="card-subtitle text-muted"> <?php $mtime = filemtime($dotdotdir); $mtime = date("m/d/Y H:i:s", $mtime); $mtime = strftime("%B %e, %G %T", strtotime($mtime)); echo ucfirst($mtime); ?> </p><div class="progress progress-xs bg-white"> <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="867" aria-valuemin="0" aria-valuemax="100" style="width: 100%"> <span class="sr-only">100% Complete</span> </div></div></div></div>
                                 <?php
-                                    if($class=='b') $class='w';
-                                    else $class = 'b';
                                 }
                                 $arsize = sizeof($dirs);
                                 for($i=0;$i<$arsize;$i++) {
                                 ?>
-                                   <!-- .lits-group-item -->
-                      <div class="list-group-item">
-                        <!-- .lits-group-item-figure -->
-                        <div class="list-group-item-figure">
-                          <div class="has-badge">
-                            <a href="<?php echo $leadon.$dirs[$i];?>" class="tile tile-md bg-yellow">FD</a>
-                            <a href="#folder" class="user-avatar user-avatar-xs">
-                              <img src="folder.png" alt="foter">
-                            </a>
-                          </div>
-                        </div>
-                        <!-- .lits-group-item-figure -->
-                        <!-- .lits-group-item-body -->
-                        <div class="list-group-item-body">
-                          <h5 class="card-title mb-2">
-                            <?php echo $dirs[$i];?>
-                          </h5>
-                          <p class="card-subtitle text-muted"> <?php $mtime = filemtime($leadon.$dirs[$i]); $mtime = date("m/d/Y H:i:s", $mtime); $mtime = strftime("%B %e, %G %T", strtotime($mtime)); print ucfirst($mtime); ?> </p>
-                          <!-- .progress -->
-                          <div class="progress progress-xs bg-white">
-                            <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="867" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                              <span class="sr-only">100% Complete</span>
-                            </div>
-                          </div>
-                          <!-- /.progress -->
-                        </div>
-                        <!-- .lits-group-item-body -->
-                      </div>
-                      <!-- /.lits-group-item -->
+<div class="list-group-item"><div class="list-group-item-figure"><div class="has-badge"><a href="<?php echo $leadon.$dirs[$i];?>" class="tile tile-md bg-yellow">FD</a> <a href="#folder" class="user-avatar user-avatar-xs"> <img src="folder.png" alt="foter"> </a> </div></div><div class="list-group-item-body"><h5 class="card-title mb-2"><?php echo $dirs[$i];?></h5><p class="card-subtitle text-muted"> <?php $mtime = filemtime($leadon.$dirs[$i]); $mtime = date("m/d/Y H:i:s", $mtime); $mtime = strftime("%B %e, %G %T", strtotime($mtime)); echo ucfirst($mtime); ?> </p><div class="progress progress-xs bg-white"> <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="867" aria-valuemin="0" aria-valuemax="100" style="width: 100%"> <span class="sr-only">100% Complete</span> </div></div></div></div>
                                 <?php
-                                    if($class=='b') $class='w';
-                                    else $class = 'b';	
                                 }
-                                
                                 $arsize = sizeof($files);
                                 for($i=0;$i<$arsize;$i++) {
                                     $icon = 'UNKNOWN';
                                     $ext = strtolower(substr($files[$i], strrpos($files[$i], '.')+1));
                                     $supportedimages = array('gif', 'png', 'jpeg', 'jpg');
                                     $thumb = '';
-                                            
                                     if($filetypes[$ext]) {
                                         $icon = $filetypes[$ext];
                                     }
-                                    
                                     $filename = $files[$i];
                                     if(strlen($filename)>43) {
                                         $filename = substr($files[$i], 0, 40) . '...';
                                     }
-                                    
-                                    $fileurl = $leadon . $files[$i];
+                                  $fileurl = $leadon . $files[$i];
                                 ?>
-                                   <!-- .lits-group-item -->
-                      <div class="list-group-item">
-                        <!-- .lits-group-item-figure -->
-                        <div class="list-group-item-figure">
-                          <div class="has-badge">
-                            <a href="#<?php echo $icon;?>" class="tile tile-md bg-indigo"><?php echo $icon;?></a>
-                            <a href="<?php echo $fileurl;?>" class="user-avatar user-avatar-xs">
-                              <img src="download.png" alt="<?php echo $icon;?>">
-                            </a>
-                          </div>
-                        </div>
-                        <!-- .lits-group-item-figure -->
-                        <!-- .lits-group-item-body -->
-                        <div class="list-group-item-body">
-                          <h5 class="card-title mb-2">
-                            <?php echo $filename;?>
-                          </h5>
-                          <p class="card-subtitle text-muted"> <?php echo round(filesize($leadon.$files[$i])/1024);?>Kb - <?php $mtime = filemtime($leadon.$files[$i]); $mtime = date("m/d/Y H:i:s", $mtime); $mtime = strftime("%B %e, %G %T", strtotime($mtime)); print ucfirst($mtime); ?> </p>
-                          <!-- .progress -->
-                          <div class="progress progress-xs bg-white">
-                            <div class="progress-bar bg-indigo" role="progressbar" aria-valuenow="867" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo round(filesize($leadon.$files[$i])/1024/1024*100);?>%">
-                              <span class="sr-only"><?php echo round(filesize($leadon.$files[$i])/1024/1024*100);?>% Complete</span>
-                            </div>
-                          </div>
-                          <!-- /.progress -->
-                        </div>
-                        <!-- .lits-group-item-body -->
-                      </div>
-                      <!-- /.lits-group-item -->
+<div class="list-group-item"><div class="list-group-item-figure"><div class="has-badge"><a href="#<?php echo $icon;?>" class="tile tile-md bg-indigo"><?php echo $icon;?></a><a href="<?php echo $fileurl;?>" class="user-avatar user-avatar-xs"><img src="download.png" alt="<?php echo $icon;?>"></a></div></div><div class="list-group-item-body"><h5 class="card-title mb-2"><?php echo $filename;?></h5><p class="card-subtitle text-muted"> <?php echo round(filesize($leadon.$files[$i])/1024);?>Kb - <?php $mtime = filemtime($leadon.$files[$i]); $mtime = date("m/d/Y H:i:s", $mtime); $mtime = strftime("%B %e, %G %T", strtotime($mtime)); echo ucfirst($mtime); ?> </p><div class="progress progress-xs bg-white"><div class="progress-bar bg-indigo" role="progressbar" aria-valuenow="867" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo round(filesize($leadon.$files[$i])/1024/1024*100);?>%"><span class="sr-only"><?php echo round(filesize($leadon.$files[$i])/1024/1024*100);?>% Complete</span> </div></div></div></div>
                                 <?php
-                                    if($class=='b') $class='w';
-                                    else $class = 'b';	
+
                                 }	
                                 ?>
-</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-    </div>
-</body></html>
+</div></div></div></div></div></div> <header class="page-title-bar">
+                <p class="lead">
+                  <span class="font-weight-bold">Hi, Wellcome to me.</span>
+                  <span class="d-block text-muted">Chỉ hỗ trợ tập tin dung lượng tối đa 200MB, Nếu là file quan trọn vui lòng xóa bỏ sau khi upload, Chúng tôi không lưu trữ lại file trong thời gian dày. chúng sẽ được xóa khỏi hệ thống!</span>
+                </p>
+              </header></div></div></div></main> </body></html>
