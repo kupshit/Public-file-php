@@ -41,7 +41,11 @@ $filetypes = array (
 				'html' => 'HTML',
 				'php' => 'PHP',
 				'xls' => 'XLS',
+				'xlsx' => 'XLS',
 				'doc' => 'DOC',
+				'docx' => 'DOC',
+				'ppt' => 'PPT',
+				'pptx' => 'PPT',
 				'pdf' => 'PDF',
 				'psd' => 'PSD',
 				'mpg' => 'MPG',
@@ -179,7 +183,7 @@ $dirs = @array_values($dirs); $files = @array_values($files);
                                 }
                                 $arsize = sizeof($files);
                                 for($i=0;$i<$arsize;$i++) {
-                                    $icon = 'UNKNOWN';
+                                    $icon = 'UNK';
                                     $ext = strtolower(substr($files[$i], strrpos($files[$i], '.')+1));
                                     $supportedimages = array('gif', 'png', 'jpeg', 'jpg');
                                     $thumb = '';
@@ -192,7 +196,7 @@ $dirs = @array_values($dirs); $files = @array_values($files);
                                     }
                                   $fileurl = $leadon . $files[$i];
                                 ?>
-<div class="list-group-item"><div class="list-group-item-figure"><div class="has-badge"><a href="#<?php echo $icon;?>" class="tile tile-md bg-indigo"><?php echo $icon;?></a><a href="<?php echo $fileurl;?>" class="user-avatar user-avatar-xs"><img src="download.png" alt="<?php echo $icon;?>"></a></div></div><div class="list-group-item-body"><h5 class="card-title mb-2"><?php echo $filename;?></h5><p class="card-subtitle text-muted"> <?php echo round(filesize($leadon.$files[$i])/1024);?>Kb - <?php $mtime = filemtime($leadon.$files[$i]); $mtime = date("m/d/Y H:i:s", $mtime); $mtime = strftime("%B %e, %G %T", strtotime($mtime)); echo ucfirst($mtime); ?> </p><div class="progress progress-xs bg-white"><div class="progress-bar bg-indigo" role="progressbar" aria-valuenow="867" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo round(filesize($leadon.$files[$i])/1024/1024*100);?>%"><span class="sr-only"><?php echo round(filesize($leadon.$files[$i])/1024/1024*100);?>% Complete</span> </div></div></div></div>
+<div class="list-group-item"><div class="list-group-item-figure"><div class="has-badge"><a href="#<?php echo $icon;?>" class="tile tile-md bg-indigo"><?php echo $icon;?></a><a href="<?php echo $fileurl;?>" class="user-avatar user-avatar-xs"><img src="download.png" alt="<?php echo $icon;?>"></a></div></div><div class="list-group-item-body"><h5 class="card-title mb-2"><?php echo $filename;?></h5><p class="card-subtitle text-muted"> <?php echo round(filesize($leadon.$files[$i])/1024);?>Kb - <?php $mtime = filemtime($leadon.$files[$i]); $mtime = date("m/d/Y H:i:s", $mtime); $mtime = strftime("%B %e, %G %T", strtotime($mtime)); echo ucfirst($mtime); ?> </p><div class="progress progress-xs bg-white"><div class="progress-bar bg-indigo" role="progressbar" aria-valuenow="867" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo round(filesize($leadon.$files[$i])/1024/1024/200*100);?>%"><span class="sr-only"><?php echo round(filesize($leadon.$files[$i])/1024/1024/200*100);?>% Complete</span> </div></div></div></div>
                                 <?php
 
                                 }	
@@ -200,6 +204,6 @@ $dirs = @array_values($dirs); $files = @array_values($files);
 </div></div></div></div></div></div> <header class="page-title-bar">
                 <p class="lead">
                   <span class="font-weight-bold">Hi, Wellcome to me.</span>
-                  <span class="d-block text-muted">Chỉ hỗ trợ tập tin dung lượng tối đa 200MB, Nếu là file quan trọn vui lòng xóa bỏ sau khi upload, Chúng tôi không lưu trữ lại file trong thời gian dày. chúng sẽ được xóa khỏi hệ thống!</span>
+                  <span class="d-block text-muted">Chỉ hỗ trợ tập tin dung lượng tối đa 200MB, Nếu là file quan trọng vui lòng xóa bỏ sau khi upload, Chúng tôi không lưu trữ lại file trong thời gian dày. Tất cả sẽ được tự động xóa khỏi hệ thống!</span>
                 </p>
               </header></div></div></div></main> </body></html>
